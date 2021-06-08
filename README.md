@@ -1,0 +1,3 @@
+Rails API for the BIOME project frontend. 
+
+More to come...

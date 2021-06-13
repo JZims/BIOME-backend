@@ -14,16 +14,16 @@ Inventory.destroy_all
         )
 end
 
-boss = User.create(username: "Queso Grande", password_digest: "swordfish", admin: true)
+boss = User.create(username: "Queso Grande", password: "swordfish", admin: true)
 
 3.times do
     User.create(
         username: Faker::FunnyName.name,
-        password_digest: "peon",
+        password: "peon",
         admin: false
     )
 end
 
 12.times do
-    Inventory.create(user_id: User.all.sample.id, beverage_id: User.all.sample.id)
+    Inventory.create(user_id: User.all.sample.id, beverage_id: Beverage.all.sample.id)
 end

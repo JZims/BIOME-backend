@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
 
   resources :beverages
+  get "/inventory", to: "beverages#index"
+  
   resources :inventories
   
   

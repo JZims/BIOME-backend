@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   
   
     def auto_login
+      
       render json: {user: UserSerializer.new(@user)}, status: :accepted
     end
   

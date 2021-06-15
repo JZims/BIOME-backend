@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :beverages
   post "/stock", to: "beverages#index"
   
+  
   resources :inventories
   post "/inventory", to: "inventories#create"
   

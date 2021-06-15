@@ -21,6 +21,13 @@ def create
     end
 end
 
+def destroy
+    @beverage = Beverage.find_by(id: params[:id])
+    @beverage.inventories.destroy_all
+
+    render json: @beverage
+end
+
 private
 
 def beverage_params

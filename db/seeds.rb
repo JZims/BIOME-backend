@@ -3,7 +3,7 @@ User.destroy_all
 Inventory.destroy_all
 
 
-10.times do
+25.times do
     Beverage.create(
         producer_name: Faker::Beer.brand,
         proprietary_name: Faker::Beer.name,
@@ -16,7 +16,7 @@ end
 
 boss = User.create(username: "Queso Grande", password: "swordfish", admin: true)
 
-3.times do
+6.times do
     User.create(
         username: Faker::FunnyName.name,
         password: "peon",
@@ -24,6 +24,6 @@ boss = User.create(username: "Queso Grande", password: "swordfish", admin: true)
     )
 end
 
-12.times do
-    Inventory.create(user_id: User.all.sample.id, beverage_id: Beverage.all.sample.id)
+40.times do
+    Inventory.create(quantity: rand(1..60), user_id: User.all.sample.id, beverage_id: Beverage.all.sample.id)
 end

@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_035226) do
   end
 
   create_table "inventories", force: :cascade do |t|
+    t.integer "quantity"
     t.integer "user_id"
     t.integer "beverage_id"
     t.datetime "created_at", precision: 6, null: false

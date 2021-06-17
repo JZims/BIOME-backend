@@ -4,6 +4,6 @@ class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true
     validates :password, presence: true
 
-    has_one :inventory
-    has_many :beverages, through: :inventory
+    has_many :inventories
+    has_many :beverages, through: :inventories
 end

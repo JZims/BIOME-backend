@@ -1,7 +1,7 @@
 class InventoriesController < ApplicationController
 
 def create
-    
+   
     @inventory = Inventory.create(inventory_params)
    
    if @inventory.valid?
@@ -19,7 +19,7 @@ end
 private
 
 def inventory_params
-    params.require(:inventory).permit(:user_id, :beverage_id)
+    params.require(:inventory).permit(:user_id, :beverage_id, :quantity)
 end
 
 end

@@ -1,7 +1,7 @@
 class BeverageSerializer < ActiveModel::Serializer
   attributes :id, :proprietary_name, :producer_name, :vintage, :image_url, :bin
 
-  has_one :inventories
+  has_many :inventories
   
 
 end

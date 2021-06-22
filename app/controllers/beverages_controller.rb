@@ -10,12 +10,13 @@ def show
 end
 
 def create
-    
     @beverage = Beverage.create(beverage_params)
+    @inventory = Inventory.create(beverage_id: @beverage.id, user_id: params[:user_id], quantity: params[:quantity])
     if @beverage.valid?
         @beverage.save
-        @inventory = Inventory.create()
-        render json: @beverage
+        # @inventory = Inventory.create()
+        # :id, :proprietary_name, :producer_name, :vintage, :image_url, :bin
+        render json: {beverage: @beverage, inventories: @beverage.inventories }
     else
         render json: {message: " ", full_messages: @beverage.errors.full_messages }
     end
@@ -32,7 +33,12 @@ end
 private
 
 def beverage_params
-    params.require(:beverage).permit(:producer_name, :proprietary_name, :vintage, :category, :image_url, :bin)
+    params.require(:beverage).permit(:producer_name, :proprietary_name, :vintage, :category, :image_url, :bin, :user_id, :quantity)
 end
+
+ def inventory_params
+    params.require(:beverage).permit(:user_id, :quantity)
+ end
+
 
 end

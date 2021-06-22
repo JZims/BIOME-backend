@@ -36,9 +36,4 @@ def beverage_params
     params.require(:beverage).permit(:producer_name, :proprietary_name, :vintage, :category, :image_url, :bin, :user_id, :quantity)
 end
 
- def inventory_params
-    params.require(:beverage).permit(:user_id, :quantity)
- end
-
-
 end

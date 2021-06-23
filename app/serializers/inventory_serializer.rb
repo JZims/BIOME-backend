@@ -1,10 +1,5 @@
 class InventorySerializer < ActiveModel::Serializer
-  attributes :id, :quantity, :user_id
+  attributes :id, :quantity, :user_id, :beverage_id
 
-  belongs_to :beverage
-
-  def beverage_quantity
-   
-  end
 
 end

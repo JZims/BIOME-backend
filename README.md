@@ -1,3 +1,4 @@
 Rails API for the BIOME project frontend. 
 
-More to come...
+Frontend Repo:
+https://github.com/JZims/BIOME-frontend

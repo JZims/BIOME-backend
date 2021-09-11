@@ -41,5 +41,5 @@ boss = User.create(username: "Queso Grande", password: "swordfish", admin: true)
 end
 
 10.times do
-    Inventory.create(quantity: rand(1..60), user_id: 56, beverage_id: Beverage.all.sample.id)
+    Inventory.create(quantity: rand(1..60), user_id: 1, beverage_id: Beverage.all.sample.id)
 end
